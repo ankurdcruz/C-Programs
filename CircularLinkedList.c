@@ -32,14 +32,14 @@ void Display(struct Node *h)
  	}while(h!=Head);
  	printf("\n");
 }
-void RDisplay(struct Node *h)
+void RecursiveDisplay(struct Node *h)
 {
  	static int flag=0;
  	if(h!=Head || flag==0)
  	{
  		flag=1;
  		printf("%d ",h->data);
- 		RDisplay(h->next);
+ 		RecursiveDisplay(h->next);
  	}
  	flag=0;
 }
@@ -136,6 +136,6 @@ int main()
 
  	Delete(Head,3);
 
- 	RDisplay(Head);
+ 	RecursiveDisplay(Head);
  	return 0;
 }
